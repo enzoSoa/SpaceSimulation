@@ -3,7 +3,7 @@
 
 int main() {
     sf::RenderWindow window(sf::VideoMode(160, 90), "Space Simulation");
-    Player player;
+    Player player(window);
 
     while (window.isOpen())
     {
