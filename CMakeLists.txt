@@ -17,5 +17,5 @@ add_executable(spaceSimulation
         src/main.cpp
         src/classes/Player.cpp
         src/tools/Types.cpp
-        src/tools/Orientation.cpp)
+        src/tools/Orientation.cpp src/tools/Environment.h)
 target_link_libraries(spaceSimulation sfml-graphics)
