@@ -1,9 +1,10 @@
 #include <SFML/Graphics.hpp>
 #include "classes/Player.h"
+#include "tools/Environment.h"
 
 int main() {
-    sf::RenderWindow window(sf::VideoMode(16 * 50, 9 * 50), "Space Simulation");
-    window.setFramerateLimit(60);
+    sf::RenderWindow window(sf::VideoMode(RESOLUTION_X, RESOLUTION_Y), "Space Simulation");
+    window.setFramerateLimit(LIMIT_FRAMERATE);
     Player player(window);
 
     while (window.isOpen()) {
