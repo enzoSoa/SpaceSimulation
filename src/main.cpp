@@ -5,7 +5,13 @@
 int main() {
     sf::RenderWindow window(sf::VideoMode(RESOLUTION_X, RESOLUTION_Y), "Space Simulation");
     window.setFramerateLimit(LIMIT_FRAMERATE);
-    Player player(window);
+
+    sf::View camera;
+    camera.setSize(sf::Vector2f(WIDTH, HEIGHT));
+    camera.setCenter(sf::Vector2f(0.f, 0.f));
+    window.setView(camera);
+
+    Player player(window, camera);
 
     while (window.isOpen()) {
         sf::Event event;
@@ -21,6 +27,7 @@ int main() {
         player.update();
 
         window.clear();
+        window.setView(camera);
         window.draw(player);
         window.display();
     }
