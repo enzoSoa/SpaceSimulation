@@ -13,7 +13,9 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(SFML)
 
-add_subdirectory(src)
-
-add_executable(spaceSimulation main.cpp)
+add_executable(spaceSimulation
+        src/main.cpp
+        src/classes/Player.cpp
+        src/tools/Types.cpp
+        src/tools/Orientation.cpp)
 target_link_libraries(spaceSimulation sfml-graphics)
