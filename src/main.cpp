@@ -2,7 +2,8 @@
 #include "classes/Player.h"
 
 int main() {
-    sf::RenderWindow window(sf::VideoMode(160, 90), "Space Simulation");
+    sf::RenderWindow window(sf::VideoMode(16*50, 9*50), "Space Simulation");
+    window.setFramerateLimit(60);
     Player player(window);
 
     while (window.isOpen())
@@ -10,8 +11,13 @@ int main() {
         sf::Event event;
         while (window.pollEvent(event))
         {
-            if (event.type == sf::Event::Closed)
-                window.close();
+            switch (event.type) {
+                case sf::Event::Closed:
+                    window.close();
+                case sf::Event::KeyPressed:
+                    if(sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+                        player.propel(.5);
+            }
         }
 
         player.update();

@@ -8,4 +8,6 @@
 
 float getMouseDegree(sf::Vector2f origin, sf::Vector2i destination);
 
+sf::Vector2f getVelocityFromDegree(float degree, float speed);
+
 #endif
