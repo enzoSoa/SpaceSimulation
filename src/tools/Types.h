@@ -1,0 +1,4 @@
+#ifndef SPACESIMULATION_TYPES_H
+#define SPACESIMULATION_TYPES_H
+
+#endif
